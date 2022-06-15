@@ -1,13 +1,17 @@
-let paperino: string | number;
+// let paperino: string | number;
 
-paperino = 'ciao';
+// paperino = 'ciao';
 
-paperino = 10;
+// paperino = 10;
 
-let topolino: any;
+// let topolino: any;
 
-topolino = null;
+// topolino = null;
 
-topolino = 10;
+// topolino = 10;
 
-topolino = 'mouse';
+// topolino = 'mouse';
+
+let qua : {name:string , age:number, grade: number, city?:string};
+
+qua = {name: 'qua', age:12, grade: 9}
