@@ -1,9 +1,5 @@
 <h1>{{title}}</h1>
 
-<div [style.background-color] = "todo.color" class="todo-card" *ngFor="let todo of todosArray">
-  <span>{{todo.name}}</span>
-  <span>{{todo.creationDate}}</span>
-</div>
 
 
 
@@ -11,7 +7,5 @@
 
 
 
-
-
-
+<app-todo-list [todos]="todosArray"></app-todo-list>
 <router-outlet></router-outlet>
