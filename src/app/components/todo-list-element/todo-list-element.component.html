@@ -1,4 +1,5 @@
 <div *ngIf="todo" [style.background-color] = "todo.color" class="todo-card">
   <span>{{todo.name}}</span>
   <span>{{todo.creationDate}}</span>
+  <button (click)="todoCompleted()">Completato</button>
 </div>

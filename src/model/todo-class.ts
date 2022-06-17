@@ -4,6 +4,7 @@ export class TodoClass {
   /**private: non è possibile visualizzare i dati*/ tags: string[];
   /**readonly: è possibile modificarlo una sola volta, all'interno del costruttore */ private readonly _creationDate: number;
   priority: TodoPriority;
+  private _doneDate?: number;
 
   constructor(name: string, tags: string[] = [], creationDate: Date = new Date(), priority: TodoPriority = TodoPriority.LOW){
     this.name = name;
@@ -12,8 +13,16 @@ export class TodoClass {
     this.priority = priority;
   }
 
-  get creationDate(){
+  get creationDate(): Date{
     return new Date(this._creationDate);
+  }
+
+  get doneDate(): Date | null{
+    if (this._doneDate) {
+      return new Date(this._doneDate);
+    } else {
+      return null
+    }
   }
 
   get color():string{
@@ -23,6 +32,13 @@ export class TodoClass {
   get string():string{
     return getPriorityString(this.priority)
   }
+
+  done():void{
+    const now = new Date();
+    this.priority = TodoPriority.DONE;
+    this._doneDate = now.getTime();
+  }
+
 }
 
 

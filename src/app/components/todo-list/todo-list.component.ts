@@ -17,4 +17,8 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  manageTodoEmission(todo:TodoClass){
+    console.log('avvenuta emissione', todo.name)
+  }
+
 }
